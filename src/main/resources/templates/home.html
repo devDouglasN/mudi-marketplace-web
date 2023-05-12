@@ -1,29 +1,25 @@
 <html>
-<head>
-<meta charset="UTF-8" />
-</head>
-<body>
-
-	<div>
-		<div>Nome do produto</div>
-		<div>
-			Valor: <span>149,99</span>
-		</div>
-		<div>
-			Data da entrega: <span>12/05/2023</span>
-		</div>
-
+	<head>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+	
+	<div th:each="order : ${requests}">
+		<div th:text="${order.nameProduct}">Nome do produto</div>
+		<div>Valor: <span th:text="${order.negotiatedValue}">149,99</span> </div>
+		<div>Data da entrega: <span th:text="${order.deliveryDate}">12/05/2023</span></div>
+		
 		<div>Produto</div>
-		<div>url do produto</div>
-
+		<div> <input th:value="${order.urlProduct}" value=" url do produto"/></div>
+		
 		<div>Descrição</div>
 		<div>
-			<textarea>descrição do pedido</textarea>
+			<textarea th:text="${order.description}">descrição do pedido</textarea>
 		</div>
-
+		
 		<div>
-			<img src="" />
+			<img th:src="${order.urlImage}" src=""/>
 		</div>
-	</div>
-</body>
+	  </div>
+	</body>
 </html>
