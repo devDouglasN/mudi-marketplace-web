@@ -1,25 +1,26 @@
 <html>
 	<head>
-		<meta charset="UTF-8" />
+		<meta charset="UTF-8" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	</head>
 	<body>
-	
-	<div th:each="order : ${requests}">
-		<div th:text="${order.nameProduct}">Nome do produto</div>
-		<div>Valor: <span th:text="${order.negotiatedValue}">149,99</span> </div>
-		<div>Data da entrega: <span th:text="${order.deliveryDate}">12/05/2023</span></div>
-		
-		<div>Produto</div>
-		<div> <input th:value="${order.urlProduct}" value=" url do produto"/></div>
-		
-		<div>Descrição</div>
-		<div>
-			<textarea th:text="${order.description}">descrição do pedido</textarea>
-		</div>
-		
-		<div>
-			<img th:src="${order.urlImage}" src=""/>
-		</div>
+		<div class="container">
+	<div class="card" th:each="order : ${requests}">
+			<div class="card-header"> th:text="${order.nameProduct}">Nome do produto</div>
+			<div>Valor: <span th:text="${order.negotiatedValue}">149,99</span> </div>
+			<div>Data da entrega: <span th:text="${order.deliveryDate}">12/05/2023</span></div>
+			
+			<div>Produto</div>
+			<div> <input class="form-control" th:value="${order.urlProduct}" value=" url do produto"/></div>
+			
+			<div>Descrição</div>
+			<div>
+				<textarea class="form-control" th:text="${order.description}">descrição do pedido</textarea>
+			</div>
+			
+			<div>
+				<img th:src="${order.urlImage}" src=""/>
+			</div>
+	  </div>
 	  </div>
 	</body>
 </html>
