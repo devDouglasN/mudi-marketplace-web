@@ -5,7 +5,7 @@
 	<body>
 		<div class="container">
 	<div class="card" th:each="order : ${pedidos}">
-			<div class="card-header"> th:text="${order.nomeProduto}">Nome do produto</div>
+			<div class="card-header" th:text="${order.nomeProduto}">Nome do produto</div>
 			<div class="card-body">
 			<div class="row">
 				<div class="col-12 col-sm-8 mb-3">
